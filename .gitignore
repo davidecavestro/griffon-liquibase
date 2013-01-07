@@ -1,0 +1,8 @@
+/bin
+/staging
+/out
+.gradle
+target
+jttslite-dev*.db
+
+/build

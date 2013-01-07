@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="griffon-1.1.0" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library name="Griffon:lib-fixes (liquibase-griffonPluginFixes)">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.ivy2/cache/com.augusttechgroup/groovy-liquibase-dsl/jars/groovy-liquibase-dsl-0.7.3.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.liquibase/liquibase-core/jars/liquibase-core-2.0.3.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.codehaus.groovy/groovy/jars/groovy-1.8.6.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/antlr/antlr/jars/antlr-2.7.7.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/asm/asm-commons/jars/asm-commons-3.2.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/asm/asm-tree/jars/asm-tree-3.2.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/asm/asm-util/jars/asm-util-3.2.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/asm/asm-analysis/jars/asm-analysis-3.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>
+
