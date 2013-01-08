@@ -4,7 +4,7 @@ class LiquibaseGriffonPlugin {
     // the version or versions of Griffon the plugin is designed for
     String griffonVersion = '1.1.0 > *'
     // the other plugins this plugin depends on
-    Map dependsOn = [gsql: 1.0]
+    Map dependsOn = [datasource: '0.4', spring: '1.1.2']
     // resources that are included in plugin packaging
     List pluginIncludes = []
     // the plugin license

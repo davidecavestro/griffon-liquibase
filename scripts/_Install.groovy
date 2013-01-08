@@ -23,4 +23,4 @@
 // """)
 // }
 
-ant.mkdir(dir:"${basedir}/griffon-app/migrations")
+ant.mkdir(dir:"${basedir}/griffon-app/resources/migrations")

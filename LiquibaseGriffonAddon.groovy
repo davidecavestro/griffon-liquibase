@@ -1,5 +1,7 @@
+import griffon.plugins.datasource.DataSourceHolder
 import groovy.sql.Sql
 import liquibase.Liquibase
+import liquibase.changelog.ChangeLogParameters
 import liquibase.changelog.DatabaseChangeLog
 import liquibase.database.Database
 import liquibase.database.DatabaseFactory
@@ -11,19 +13,21 @@ import liquibase.parser.ChangeLogParserFactory
 import liquibase.parser.ext.GroovyLiquibaseChangeLogParser
 import liquibase.resource.ClassLoaderResourceAccessor
 import liquibase.resource.ResourceAccessor
+import org.springframework.core.io.Resource
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver
 
 import java.sql.Connection
 import java.sql.SQLException
 
 class LiquibaseGriffonAddon {
-    def resourceAccessor
-    ChangeLogParserFactory parserFactory
+    GriffonApplication app
 
     // lifecycle methods
 
     // called once, after the addon is created
-    //void addonInit(GriffonApplication app) {
-    //}
+    void addonInit(GriffonApplication app) {
+        this.app = app
+    }
 
     // called once, after all addons have been inited
     //void addonPostInit(GriffonApplication app) {
@@ -66,21 +70,23 @@ class LiquibaseGriffonAddon {
     // adds application event handlers
     Map events = [
     //    "StartupStart": {app -> /* event hadler code */ }
-            "DataSourceConnectEnd": {app ->
+            DataSourceConnectEnd: {dsName, ds->
+                PathMatchingResourcePatternResolver pathResolver = new PathMatchingResourcePatternResolver(app.class.classLoader)
+                ResourceAccessor resourceAccessor = new SpringResourceAccessor (pathResolver: pathResolver)
 
-                resourceAccessor = new ClassLoaderResourceAccessor()
-                parserFactory = ChangeLogParserFactory.instance
+                ChangeLogParserFactory parserFactory = ChangeLogParserFactory.instance
                 ChangeLogParserFactory.getInstance().register(new GroovyLiquibaseChangeLogParser())
 
-                def changeLogFilePath = "migrations/${app.metadata.'app.name'}/rootChangelog.groovy"
-                ChangeLogParser parser = parserFactory.getParser(changeLogFilePath, resourceAccessor)
-                DatabaseChangeLog changeLog = parser.parse(changeLogFilePath, null, resourceAccessor)
+                def changeLogFilePath = app.config.griffon?.liquibase?.rootChangeLogPath
+                if (!changeLogFilePath) {
+                    changeLogFilePath = "classpath*:migrations/rootChangelog.groovy"
+                }
 
-                withSql {String dataSourceName, Sql sql->
+                DataSourceHolder.instance.withSql('default', {String dataSourceName, Sql sql->
                     Connection c = sql.getConnection()
                     Liquibase liquibase = null;
                     try {
-                        liquibase = createLiquibase(c, changeLog, resourceAccessor);
+                        liquibase = createLiquibase(c, changeLogFilePath, resourceAccessor);
                         def contexts = ''
                         liquibase.update(contexts);
                     } catch (SQLException e) {
@@ -98,12 +104,12 @@ class LiquibaseGriffonAddon {
                             }
                         }
                     }
-                }
+                })
             }
     ]
 
 
-    protected Liquibase createLiquibase(Connection c, DatabaseChangeLog changeLog, ResourceAccessor resourceAccessor) throws LiquibaseException {
+    protected Liquibase createLiquibase(Connection c, String changeLog, ResourceAccessor resourceAccessor) throws LiquibaseException {
         Liquibase liquibase = new Liquibase(changeLog, resourceAccessor, createDatabase(c));
         /*
         if (parameters != null) {
@@ -134,6 +140,13 @@ class LiquibaseGriffonAddon {
         return database;
     }
 
+    /*
+    protected DatabaseChangeLog loadChangelog (ChangeLogParserFactory parserFactory, ResourceAccessor resourceAccessor, String path, ChangeLogParameters changeLogParameters) {
+        ChangeLogParser parser = parserFactory.getParser(path, resourceAccessor)
+        parser.parse(path, changeLogParameters, resourceAccessor)
+    }
+    */
+
     // handle synthetic node properties or
     // intercept existing ones
     //List attributeDelegates = [
@@ -155,4 +168,29 @@ class LiquibaseGriffonAddon {
     //List postNodeCompletionDelegates = [
     //    {builder, parent, node -> /*handler code*/ }
     //]
+
+    /**
+     * A resource accessor backed by a Spring path resolver
+     */
+    class SpringResourceAccessor implements ResourceAccessor {
+
+        PathMatchingResourcePatternResolver pathResolver
+
+        @Override
+        InputStream getResourceAsStream(String location) throws IOException {
+            pathResolver.getResource(location).inputStream
+        }
+
+        @Override
+        Enumeration<URL> getResources(String locationPattern) throws IOException {
+            pathResolver.getResources(locationPattern).collect {Resource resource->
+                resource.URL
+            }
+        }
+
+        @Override
+        ClassLoader toClassLoader() {
+            return pathResolver.classLoader
+        }
+    }
 }
