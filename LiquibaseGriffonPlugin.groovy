@@ -1,3 +1,22 @@
+/*
+ * Copyright 2013 the original author or authors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * @author Davide Cavestro
+ */
 class LiquibaseGriffonPlugin {
     // the plugin version
     String version = '0.1'
@@ -19,7 +38,7 @@ class LiquibaseGriffonPlugin {
     // URL where documentation can be found
     String documentation = ''
     // URL where source can be found
-    String source = ''
+    String source = 'https://github.com/davidecavestro/griffon-liquibase'
 
     List authors = [
             [
@@ -30,7 +49,7 @@ class LiquibaseGriffonPlugin {
     String title = 'Executes database migration scripts using Liquibase'
     // accepts Markdown syntax. See http://daringfireball.net/projects/markdown/ for details
     String description = '''
-Provides integration with [Liquibase][1] for database migrations.
+Provides integration with [Liquibase][1] for database migrations (parsing groovy changesets through [groovy-liquibase-dsl][2]).
 
 Usage
 ----
@@ -40,6 +59,16 @@ Configuration
 -------------
 TBD
 
+TODO
+-------------
+* Documentation
+* Tests
+* Provide a way to work on multiple datasources
+* Provide more liquibase configuration hooks (changeset parameters, contexts, default tablespace, etc)
+* Support changeset files inclusion (it seems that groovy-liquibase cannot load them from classpath)
+
+
 [1]: http://liquibase.org/
+[2]: https://github.com/tlberglund/groovy-liquibase
 '''
 }

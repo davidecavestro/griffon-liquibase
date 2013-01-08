@@ -1,23 +1,40 @@
+/*
+ * Copyright 2013 the original author or authors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
 import griffon.plugins.datasource.DataSourceHolder
 import groovy.sql.Sql
 import liquibase.Liquibase
-import liquibase.changelog.ChangeLogParameters
-import liquibase.changelog.DatabaseChangeLog
 import liquibase.database.Database
 import liquibase.database.DatabaseFactory
 import liquibase.database.jvm.JdbcConnection
 import liquibase.exception.DatabaseException
 import liquibase.exception.LiquibaseException
-import liquibase.parser.ChangeLogParser
 import liquibase.parser.ChangeLogParserFactory
 import liquibase.parser.ext.GroovyLiquibaseChangeLogParser
-import liquibase.resource.ClassLoaderResourceAccessor
 import liquibase.resource.ResourceAccessor
 import org.springframework.core.io.Resource
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver
 
 import java.sql.Connection
 import java.sql.SQLException
+
+/**
+ * @author Davide Cavestro
+ */
 
 class LiquibaseGriffonAddon {
     GriffonApplication app
@@ -29,99 +46,49 @@ class LiquibaseGriffonAddon {
         this.app = app
     }
 
-    // called once, after all addons have been inited
-    //void addonPostInit(GriffonApplication app) {
-    //}
-
-    // called many times, after creating a builder
-    //void addonBuilderInit(GriffonApplication app, FactoryBuilderSupport builder) {
-    //}
-
-    // called many times, after creating a builder and after
-    // all addons have been inited
-    //void addonBuilderPostInit(GriffonApplication app, FactoryBuilderSupport builder) {
-    //}
-
-    // to add MVC Groups use create-mvc
-
-    // builder fields, these are added to all builders.
-    // closures can either be literal { it -> println it}
-    // or they can be method closures: this.&method
-
-    // adds methods to all builders
-    //Map methods = [
-    //    methodName: { /*Closure*/ }
-    //]
-
-    // adds properties to all builders
-    //Map props = [
-    //    propertyName: [
-    //        get: { /* optional getter closure */ },
-    //        set: {val-> /* optional setter closure */ },
-    //  ]
-    //]
-
-    // adds new factories to all builders
-    //Map factories = [
-    //    factory : /*instance that extends Factory*/
-    //]
-
-
-    // adds application event handlers
     Map events = [
-    //    "StartupStart": {app -> /* event hadler code */ }
-            DataSourceConnectEnd: {dsName, ds->
-                PathMatchingResourcePatternResolver pathResolver = new PathMatchingResourcePatternResolver(app.class.classLoader)
-                ResourceAccessor resourceAccessor = new SpringResourceAccessor (pathResolver: pathResolver)
+        DataSourceConnectEnd: {dsName, ds->
+            PathMatchingResourcePatternResolver pathResolver = new PathMatchingResourcePatternResolver(app.class.classLoader)
+            ResourceAccessor resourceAccessor = new SpringResourceAccessor (pathResolver: pathResolver)
 
-                ChangeLogParserFactory parserFactory = ChangeLogParserFactory.instance
-                ChangeLogParserFactory.getInstance().register(new GroovyLiquibaseChangeLogParser())
+            ChangeLogParserFactory parserFactory = ChangeLogParserFactory.instance
+            ChangeLogParserFactory.getInstance().register(new GroovyLiquibaseChangeLogParser())
 
-                def changeLogFilePath = app.config.griffon?.liquibase?.rootChangeLogPath
-                if (!changeLogFilePath) {
-                    changeLogFilePath = "classpath*:migrations/rootChangelog.groovy"
-                }
+            def changeLogFilePath = app.config.griffon?.liquibase?.rootChangeLogPath
+            if (!changeLogFilePath) {//default root changelog path
+                changeLogFilePath = "classpath*:migrations/rootChangelog.groovy"
+            }
 
-                DataSourceHolder.instance.withSql('default', {String dataSourceName, Sql sql->
-                    Connection c = sql.getConnection()
-                    Liquibase liquibase = null;
-                    try {
-                        liquibase = createLiquibase(c, changeLogFilePath, resourceAccessor);
-                        def contexts = ''
-                        liquibase.update(contexts);
-                    } catch (SQLException e) {
-                        throw new DatabaseException(e);
-                    } finally {
-                        if (liquibase != null) {
-                            liquibase.forceReleaseLocks();
-                        }
-                        if (c != null) {
-                            try {
-                                c.rollback();
-                                c.close();
-                            } catch (SQLException e) {
-                                //nothing to do
-                            }
+            //FIXME provide a way to work on multiple datasources
+            DataSourceHolder.instance.withSql('default', {String dataSourceName, Sql sql->
+                Connection c = sql.getConnection()
+                Liquibase liquibase = null;
+                try {
+                    liquibase = createLiquibase(c, changeLogFilePath, resourceAccessor);
+                    def contexts = ''
+                    liquibase.update(contexts);
+                } catch (SQLException e) {
+                    throw new DatabaseException(e);
+                } finally {
+                    if (liquibase != null) {
+                        liquibase.forceReleaseLocks();
+                    }
+                    if (c != null) {
+                        try {
+                            c.rollback();
+                            c.close();
+                        } catch (SQLException e) {
+                            //nothing to do
                         }
                     }
-                })
-            }
+                }
+            })
+        }
     ]
 
 
     protected Liquibase createLiquibase(Connection c, String changeLog, ResourceAccessor resourceAccessor) throws LiquibaseException {
         Liquibase liquibase = new Liquibase(changeLog, resourceAccessor, createDatabase(c));
-        /*
-        if (parameters != null) {
-            for(Map.Entry<String, String> entry: parameters.entrySet()) {
-                liquibase.setChangeLogParameter(entry.getKey(), entry.getValue());
-                }
-            }
-
-        if (isDropFirst()) {
-            liquibase.dropAll();
-        }
-        */
         return liquibase;
     }
     /**
@@ -133,41 +100,8 @@ class LiquibaseGriffonAddon {
      */
     protected Database createDatabase(Connection c) throws DatabaseException {
         Database database = DatabaseFactory.getInstance().findCorrectDatabaseImplementation(new JdbcConnection(c));
-/*        if (this.defaultSchema != null) {
-            database.setDefaultSchemaName(this.defaultSchema);
-        }
-*/
         return database;
     }
-
-    /*
-    protected DatabaseChangeLog loadChangelog (ChangeLogParserFactory parserFactory, ResourceAccessor resourceAccessor, String path, ChangeLogParameters changeLogParameters) {
-        ChangeLogParser parser = parserFactory.getParser(path, resourceAccessor)
-        parser.parse(path, changeLogParameters, resourceAccessor)
-    }
-    */
-
-    // handle synthetic node properties or
-    // intercept existing ones
-    //List attributeDelegates = [
-    //    {builder, node, attributes -> /*handler code*/ }
-    //]
-
-    // called before a node is instantiated
-    //List preInstantiateDelegates = [
-    //    {builder, attributes, value -> /*handler code*/ }
-    //]
-
-    // called after the node was instantiated
-    //List postInstantiateDelegates = [
-    //    {builder, attributes, node -> /*handler code*/ }
-    //]
-
-    // called after the node has been fully
-    // processed, including child content
-    //List postNodeCompletionDelegates = [
-    //    {builder, parent, node -> /*handler code*/ }
-    //]
 
     /**
      * A resource accessor backed by a Spring path resolver
