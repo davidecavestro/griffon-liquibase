@@ -61,8 +61,8 @@ So far script inclusion is not supported, as per [groovy-liquibase issue #28](ht
 
 Configuration
 -------------
-The plugin automatically creates an empty migration script during installation at path `"griffon-app/resources/migrations/rootChangelog.groovy"`.
-Should you prefer a different path you can move it and add to Config.groovy a configuration property pointing to the right path (its default value is `"classpath*:migrations/rootChangelog.groovy"`).
+The plugin automatically creates an empty migration script during installation at path `"griffon-app/resources/migrations/RootChangelog.groovy"`.
+Should you prefer a different path you can move it and add to _Config.groovy_ the configuration property `griffon.liquibase.rootChangeLogPath` pointing to the right path (where the default value is `"classpath*:migrations/RootChangelog.groovy"`).
 
 TODO
 -------------

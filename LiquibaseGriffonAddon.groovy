@@ -56,7 +56,7 @@ class LiquibaseGriffonAddon {
 
             def changeLogFilePath = app.config.griffon?.liquibase?.rootChangeLogPath
             if (!changeLogFilePath) {//default root changelog path
-                changeLogFilePath = "classpath*:migrations/rootChangelog.groovy"
+                changeLogFilePath = "classpath*:migrations/RootChangelog.groovy"
             }
 
             //FIXME provide a way to work on multiple datasources

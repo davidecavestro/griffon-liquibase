@@ -25,10 +25,15 @@
 
 ant.mkdir(dir:"${basedir}/griffon-app/resources/migrations")
 
-if(!new File("${basedir}/griffon-app/resources/migrations/rootChangelog.groovy").exists()) {
+includeTargets << griffonScript("_GriffonCreateArtifacts")
+
+argsMap = argsMap ?: [:]
+argsMap.skipPackagePrompt = true
+
+if(!new File("${basedir}/griffon-app/resources/migrations/RootChangelog.groovy").exists()) {
     createArtifact(
-        name:   "rootChangelog",
+        name:   "RootChangelog",
         suffix: "",
-        type:   "rootChangelog",
+        type:   "RootChangelog",
         path:   "griffon-app/resources/migrations")
 }
