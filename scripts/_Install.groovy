@@ -24,3 +24,11 @@
 // }
 
 ant.mkdir(dir:"${basedir}/griffon-app/resources/migrations")
+
+if(!new File("${basedir}/griffon-app/resources/migrations/rootChangelog.groovy").exists()) {
+    createArtifact(
+        name:   "rootChangelog",
+        suffix: "",
+        type:   "rootChangelog",
+        path:   "griffon-app/resources/migrations")
+}

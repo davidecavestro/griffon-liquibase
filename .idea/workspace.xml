@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e3aec05-1f35-4a77-aa15-caafd01d2564" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/README" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LiquibaseGriffonPlugin.groovy" afterPath="$PROJECT_DIR$/LiquibaseGriffonPlugin.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/_Install.groovy" afterPath="$PROJECT_DIR$/scripts/_Install.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="liquibase.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$USER_HOME$/.griffon/" />
     <file path="/a.dummy" changelist="5e3aec05-1f35-4a77-aa15-caafd01d2564" time="1357660845122" ignored="false" />
-    <file path="/Dummy.txt" changelist="5e3aec05-1f35-4a77-aa15-caafd01d2564" time="1357661809918" ignored="false" />
+    <file path="/Dummy.txt" changelist="5e3aec05-1f35-4a77-aa15-caafd01d2564" time="1357889519519" ignored="false" />
     <file path="/BuildConfig.groovy" changelist="5e3aec05-1f35-4a77-aa15-caafd01d2564" time="1357569213934" ignored="false" />
     <file path="/LiquibaseGriffonAddon.groovy" changelist="5e3aec05-1f35-4a77-aa15-caafd01d2564" time="1357661597569" ignored="false" />
     <file path="/LiquibaseGriffonPlugin.groovy" changelist="5e3aec05-1f35-4a77-aa15-caafd01d2564" time="1357661444803" ignored="false" />
@@ -76,25 +76,25 @@
       <file leaf-file-name="LiquibaseGriffonAddon.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LiquibaseGriffonAddon.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="24" selection-start="3285" selection-end="3285" vertical-scroll-proportion="0.0">
+            <state line="58" column="79" selection-start="2166" selection-end="2208" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LiquibaseGriffonPlugin.groovy" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="LiquibaseGriffonPlugin.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/LiquibaseGriffonPlugin.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="2" selection-start="2173" selection-end="2173" vertical-scroll-proportion="0.0">
+            <state line="59" column="74" selection-start="2425" selection-end="2425" vertical-scroll-proportion="0.51492536">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
+      <file leaf-file-name="_Install.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/_Install.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="128" selection-end="128" vertical-scroll-proportion="0.018703243">
+            <state line="27" column="78" selection-start="992" selection-end="1045" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -182,11 +182,11 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/griffon-app/conf/BuildConfig.groovy" />
-        <option value="$PROJECT_DIR$/scripts/_Install.groovy" />
         <option value="$PROJECT_DIR$/LICENSE.txt" />
         <option value="$PROJECT_DIR$/LiquibaseGriffonAddon.groovy" />
-        <option value="$PROJECT_DIR$/LiquibaseGriffonPlugin.groovy" />
         <option value="$PROJECT_DIR$/README" />
+        <option value="$PROJECT_DIR$/scripts/_Install.groovy" />
+        <option value="$PROJECT_DIR$/LiquibaseGriffonPlugin.groovy" />
       </list>
     </option>
   </component>
@@ -222,7 +222,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -250,9 +249,24 @@
               <option name="myItemId" value="liquibase" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="griffon-liquibase" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquibase" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -273,12 +287,6 @@
     <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RunManager" selected="Griffon.Griffon:liquibase package-plugin">
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
-      <option name="PROGRAM_PARAMETERS" />
-      <method />
-    </configuration>
     <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
       <module name="" />
       <setting name="path" value="" />
@@ -286,6 +294,12 @@
       <setting name="params" value="" />
       <setting name="workDir" value="$PROJECT_DIR$" />
       <setting name="debug" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
     <configuration default="true" type="GriffonRunConfigurationType" factoryName="Griffon">
@@ -302,6 +316,19 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -329,19 +356,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -436,7 +450,11 @@
       <created>1357661814900</created>
       <updated>1357661814900</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added license and some documentation">
+      <created>1357661975084</created>
+      <updated>1357661975084</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -452,18 +470,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Griffon View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Griffon View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.49537036" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25445706" sideWeight="0.43735498" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25445706" sideWeight="0.44675925" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25445706" sideWeight="0.55452436" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25445706" sideWeight="0.5451389" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3275463" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3287037" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -530,11 +548,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$GRIFFON_HOME$/lib/org.springframework.core-3.1.2.RELEASE.jar!/org/springframework/core/io/support/ResourcePatternResolver.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="35" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.ivy2/cache/org.liquibase/liquibase-core/jars/liquibase-core-2.0.3.jar!/liquibase/resource/ResourceAccessor.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="17" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0" />
@@ -547,23 +560,17 @@
     </entry>
     <entry file="jar://$GRIFFON_HOME$/lib/org.springframework.core-3.1.2.RELEASE.jar!/org/springframework/core/io/support/PathMatchingResourcePatternResolver.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="43" selection-start="1394" selection-end="1394" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="28" column="43" selection-start="1394" selection-end="1394" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.ivy2/cache/org.codehaus.griffon.plugins/griffon-datasource-runtime/jars/griffon-datasource-runtime-0.4.jar!/griffon/plugins/datasource/DataSourceHolder.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="62" selection-start="1719" selection-end="1719" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="34" column="62" selection-start="1719" selection-end="1719" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.griffon/1.1.0/projects/liquibase/plugins/datasource-0.4/dist/griffon-datasource-0.4-sources.jar!/DatasourceGriffonAddon.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="6" selection-start="893" selection-end="893" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="25" column="6" selection-start="893" selection-end="893" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.griffon/1.1.0/projects/liquibase/plugins/datasource-0.4/dist/griffon-datasource-0.4-sources.jar!/griffon/plugins/datasource/DataSourceEnhancer.groovy">
@@ -615,23 +622,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="128" selection-end="128" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/_Install.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="78" selection-start="992" selection-end="1045" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/LiquibaseGriffonAddon.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="24" selection-start="3285" selection-end="3285" vertical-scroll-proportion="0.0">
+        <state line="58" column="79" selection-start="2166" selection-end="2208" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LiquibaseGriffonPlugin.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="2" selection-start="2173" selection-end="2173" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="128" selection-end="128" vertical-scroll-proportion="0.018703243">
+        <state line="59" column="74" selection-start="2425" selection-end="2425" vertical-scroll-proportion="0.51492536">
           <folding />
         </state>
       </provider>
