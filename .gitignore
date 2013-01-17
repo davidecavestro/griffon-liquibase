@@ -5,3 +5,4 @@
 target
 jttslite-dev*.db
 /build
+.idea
