@@ -4,5 +4,4 @@
 .gradle
 target
 jttslite-dev*.db
-.idea/workspace.xml
 /build
