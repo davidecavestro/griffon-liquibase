@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e3aec05-1f35-4a77-aa15-caafd01d2564" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/release_notes.md" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/griffon_1_1_0.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LiquibaseGriffonAddon.groovy" afterPath="$PROJECT_DIR$/LiquibaseGriffonAddon.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LiquibaseGriffonPlugin.groovy" afterPath="$PROJECT_DIR$/LiquibaseGriffonPlugin.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application.properties" afterPath="$PROJECT_DIR$/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liquibase-griffonPluginFixes.iml" afterPath="$PROJECT_DIR$/liquibase-griffonPluginFixes.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liquibase-griffonPlugins.iml" afterPath="$PROJECT_DIR$/liquibase-griffonPlugins.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liquibase.iml" afterPath="$PROJECT_DIR$/liquibase.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="liquibase.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$USER_HOME$/.griffon/" />
     <file path="/a.dummy" changelist="5e3aec05-1f35-4a77-aa15-caafd01d2564" time="1358150519192" ignored="false" />
-    <file path="/Dummy.txt" changelist="5e3aec05-1f35-4a77-aa15-caafd01d2564" time="1358416904978" ignored="false" />
+    <file path="/Dummy.txt" changelist="5e3aec05-1f35-4a77-aa15-caafd01d2564" time="1358416943923" ignored="false" />
     <file path="/BuildConfig.groovy" changelist="5e3aec05-1f35-4a77-aa15-caafd01d2564" time="1357569213934" ignored="false" />
     <file path="/LiquibaseGriffonAddon.groovy" changelist="5e3aec05-1f35-4a77-aa15-caafd01d2564" time="1358349174447" ignored="false" />
     <file path="/LiquibaseGriffonPlugin.groovy" changelist="5e3aec05-1f35-4a77-aa15-caafd01d2564" time="1357661444803" ignored="false" />
@@ -82,7 +74,7 @@
       <file leaf-file-name="LiquibaseGriffonAddon.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/LiquibaseGriffonAddon.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="46" selection-start="2230" selection-end="2230" vertical-scroll-proportion="0.018656716">
+            <state line="60" column="46" selection-start="2230" selection-end="2230" vertical-scroll-proportion="0.018703243">
               <folding />
             </state>
           </provider>
@@ -458,7 +450,11 @@
       <created>1357893277433</created>
       <updated>1357893277433</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Preparing for initial release">
+      <created>1358416948135</created>
+      <updated>1358416948135</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -474,18 +470,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Griffon View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.49537036" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2552674" sideWeight="0.7037037" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2552674" sideWeight="0.7030162" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2552674" sideWeight="0.28819445" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2552674" sideWeight="0.28886312" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41087964" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298611" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3275463" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -528,7 +524,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="* fixed automatic root changelog creation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Preparing for initial release" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -546,6 +542,7 @@
     <MESSAGE value="* increased documentation&#10;* added automatic root changelog creation" />
     <MESSAGE value="* added automatic root changelog creation" />
     <MESSAGE value="* fixed automatic root changelog creation" />
+    <MESSAGE value="Preparing for initial release" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -652,7 +649,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LiquibaseGriffonAddon.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="46" selection-start="2230" selection-end="2230" vertical-scroll-proportion="0.018656716">
+        <state line="60" column="46" selection-start="2230" selection-end="2230" vertical-scroll-proportion="0.018703243">
           <folding />
         </state>
       </provider>
