@@ -15,6 +15,8 @@
  */
 
 
+
+import griffon.plugins.datasource.DataSourceConnector
 import griffon.plugins.datasource.DataSourceHolder
 import groovy.sql.Sql
 import liquibase.Liquibase
@@ -56,11 +58,11 @@ class LiquibaseGriffonAddon {
 
             def changeLogFilePath = app.config.griffon?.liquibase?.rootChangeLogPath
             if (!changeLogFilePath) {//default root changelog path
-                changeLogFilePath = "classpath*:migrations/RootChangelog.groovy"
+                changeLogFilePath = "classpath:migrations/RootChangelog.groovy"
             }
 
             //FIXME provide a way to work on multiple datasources
-            DataSourceHolder.instance.withSql('default', {String dataSourceName, Sql sql->
+            DataSourceConnector.instance.resolveDataSourceProvider(app).withSql('default') {String dataSourceName, Sql sql->
                 Connection c = sql.getConnection()
                 Liquibase liquibase = null;
                 try {
@@ -82,7 +84,7 @@ class LiquibaseGriffonAddon {
                         }
                     }
                 }
-            })
+            }
         }
     ]
 

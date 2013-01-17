@@ -4,7 +4,6 @@
     <exclude-output />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="griffon-1.1.0" level="project" />
     <orderEntry type="module-library" exported="">
       <library name="Griffon:lib-fixes (liquibase-griffonPluginFixes)">
         <CLASSES>
@@ -16,33 +15,36 @@
           <root url="jar://$USER_HOME$/.ivy2/cache/asm/asm-tree/jars/asm-tree-3.2.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/asm/asm-util/jars/asm-util-3.2.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/asm/asm-analysis/jars/asm-analysis-3.2.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.springframework/org.springframework.aop/jars/org.springframework.aop-3.1.2.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.springframework/org.springframework.asm/jars/org.springframework.asm-3.1.2.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.springframework/org.springframework.aspects/jars/org.springframework.aspects-3.1.2.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.springframework/org.springframework.expression/jars/org.springframework.expression-3.1.2.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.springframework/org.springframework.transaction/jars/org.springframework.transaction-3.1.2.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.springframework/org.springframework.instrument/jars/org.springframework.instrument-3.1.2.RELEASE.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/commons-dbcp/commons-dbcp/jars/commons-dbcp-1.4.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/commons-pool/commons-pool/jars/commons-pool-1.6.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/com.h2database/h2/jars/h2-1.3.170.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.codehaus.griffon.plugins/griffon-datasource-runtime/jars/griffon-datasource-runtime-1.1.0.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.codehaus.griffon.plugins/griffon-gsql-runtime/jars/griffon-gsql-runtime-1.1.1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.springframework/org.springframework.aop/jars/org.springframework.aop-3.2.0.RELEASE.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.springframework/org.springframework.aspects/jars/org.springframework.aspects-3.2.0.RELEASE.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.springframework/org.springframework.expression/jars/org.springframework.expression-3.2.0.RELEASE.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.springframework/org.springframework.transaction/jars/org.springframework.transaction-3.2.0.RELEASE.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.springframework/org.springframework.instrument/jars/org.springframework.instrument-3.2.0.RELEASE.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/cglib/cglib-nodep/jars/cglib-nodep-2.2.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/aopalliance/aopalliance/jars/aopalliance-1.0.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.aspectj/aspectjweaver/jars/aspectjweaver-1.6.10.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.aspectj/aspectjrt/jars/aspectjrt-1.6.10.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.grails/grails-spring/jars/grails-spring-1.3.7.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.codehaus.griffon.plugins/griffon-spring-runtime/jars/griffon-spring-runtime-1.1.2.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.codehaus.griffon.plugins/griffon-gsql-runtime/jars/griffon-gsql-runtime-1.0.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/commons-dbcp/commons-dbcp/jars/commons-dbcp-1.4.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/commons-pool/commons-pool/jars/commons-pool-1.6.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/com.h2database/h2/jars/h2-1.3.168.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.codehaus.griffon.plugins/griffon-datasource-runtime/jars/griffon-datasource-runtime-0.4.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.codehaus.griffon.plugins/griffon-spring-runtime/jars/griffon-spring-runtime-1.2.0.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.codehaus.griffon.plugins/griffon-datasource-compile/jars/griffon-datasource-compile-1.1.0.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.projectlombok/lombok/jars/lombok-0.11.6.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/com.github.peichhorn/lombok-pg/jars/lombok-pg-0.11.3.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.codehaus.griffon.plugins/griffon-lombok-compile/jars/griffon-lombok-compile-0.4.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$USER_HOME$/.griffon/1.1.0/projects/liquibase/plugins/spring-1.1.2/dist/griffon-spring-1.1.2-javadoc.jar!/" />
-          <root url="jar://$USER_HOME$/.griffon/1.1.0/projects/liquibase/plugins/gsql-1.0/dist/griffon-gsql-1.0-javadoc.jar!/" />
-          <root url="jar://$USER_HOME$/.griffon/1.1.0/projects/liquibase/plugins/datasource-0.4/dist/griffon-datasource-0.4-javadoc.jar!/" />
+          <root url="jar://$USER_HOME$/.griffon/1.2.0/projects/griffon-liquibase/plugins/datasource-1.1.0/docs/griffon-datasource-runtime-1.1.0-javadoc.jar!/" />
+          <root url="jar://$USER_HOME$/.griffon/1.2.0/projects/griffon-liquibase/plugins/gsql-1.1.1/docs/griffon-gsql-runtime-1.1.1-javadoc.jar!/" />
+          <root url="jar://$USER_HOME$/.griffon/1.2.0/projects/griffon-liquibase/plugins/spring-1.2.0/docs/griffon-spring-runtime-1.2.0-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$USER_HOME$/.griffon/1.1.0/projects/liquibase/plugins/spring-1.1.2/dist/griffon-spring-1.1.2-sources.jar!/" />
-          <root url="jar://$USER_HOME$/.griffon/1.1.0/projects/liquibase/plugins/gsql-1.0/dist/griffon-gsql-1.0-sources.jar!/" />
-          <root url="jar://$USER_HOME$/.griffon/1.1.0/projects/liquibase/plugins/datasource-0.4/dist/griffon-datasource-0.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.griffon/1.2.0/projects/griffon-liquibase/plugins/datasource-1.1.0/docs/griffon-datasource-runtime-1.1.0-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.griffon/1.2.0/projects/griffon-liquibase/plugins/gsql-1.1.1/docs/griffon-gsql-runtime-1.1.1-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.griffon/1.2.0/projects/griffon-liquibase/plugins/spring-1.2.0/docs/griffon-spring-runtime-1.2.0-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
