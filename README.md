@@ -1,4 +1,4 @@
-# Griffon Liquibase
+# Griffon Liquibase [![Build Status](https://travis-ci.org/davidecavestro/griffon-liquibase.png?branch=master)](https://travis-ci.org/davidecavestro/griffon-liquibase)
 Provides integration with [Liquibase][1] for database migrations (parsing groovy changesets through [groovy-liquibase-dsl][2]).
 
 ## License
