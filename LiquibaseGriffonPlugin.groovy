@@ -19,7 +19,7 @@
  */
 class LiquibaseGriffonPlugin {
     // the plugin version
-    String version = '0.1'
+    String version = '0.2'
     // the version or versions of Griffon the plugin is designed for
     String griffonVersion = '1.2.0 > *'
     // the other plugins this plugin depends on
@@ -49,20 +49,62 @@ class LiquibaseGriffonPlugin {
     String title = 'Executes database migration scripts using Liquibase'
     // accepts Markdown syntax. See http://daringfireball.net/projects/markdown/ for details
     String description = '''
-Provides integration with [Liquibase][1] for database migrations (parsing groovy changesets through [groovy-liquibase-dsl][2]).
-
-Usage
-----
+Provides integration with [Liquibase][1] for database migrations (parsing groovy changesets
+through [groovy-liquibase-dsl][2]).
 This plugin enables the execution of Liquibase migration scripts at application startup. Hence you have to
 include your changesets on the migration changelog file.
-The migration file syntax is based on [groovy-liquibase-dsl][2] syntax.
 
-So far script inclusion is not supported, as per [groovy-liquibase issue #28](https://github.com/tlberglund/groovy-liquibase/issues/28)
+Usage
+-----
+Upon installation the plugin will generate the following artifacts in `$appdir/griffon-app/resources/migrations`:
+
+ * RootChangelog.groovy - contains the root changelog definition.
+
+The root changelog can be used to directly define the migration changesets. Since it can lead to huge contents from
+version 0.2 you can split changelogs in multiple files and include them from the root changelog.
+
+
+    databaseChangeLog() {
+        include(file: 'migrations/20130304-initial-schema.groovy', relativeToChangelog: false)
+        include(file: 'migrations/20130305-other-changes.groovy', relativeToChangelog: false)
+        ...
+    }
+
+Every changelog can define multiple changesets, following the [liquibase syntax][3]
+
+    databaseChangeLog() {
+        changeSet(id:'initial-schema', author: 'yourname') {
+            //cross dbms directives
+            createTable (tableName: "person") {
+                column (name:"id", type:"bigint", autoIncrement:"true") {
+                    constraints (primaryKey:"true", nullable:"false")
+                }
+                column (name:"firstname", type:"varchar(50)")
+                column (name:"lastname", type:"varchar(50)") {
+                    constraints (nullable:"false")
+                }
+            }
+            //dbms-specific sql syntax
+            sql(stripComments: true, splitStatements: true, endDelimiter: ';') {
+                """
+                CREATE TABLE mytable (
+                    id LONG NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                    name VARCHAR (4000),
+                    description VARCHAR (10000),
+                );
+                """
+            }
+        }
+        ...
+    }
+
+
 
 Configuration
 -------------
-The plugin automatically creates an empty migration script during installation at path `"griffon-app/resources/migrations/RootChangelog.groovy"`.
-Should you prefer a different path you can move it and add to _Config.groovy_ the configuration property `griffon.liquibase.rootChangeLogPath` pointing to the right path (where the default value is `"classpath:migrations/RootChangelog.groovy"`).
+Should you prefer moving _RootChangelog.groovy_ to a different path you should also add to _Config.groovy_ the
+configuration property `griffon.liquibase.rootChangeLogPath` pointing to the right path (where the default value
+is `"classpath:migrations/RootChangelog.groovy"`).
 
 TODO
 -------------
@@ -70,10 +112,10 @@ TODO
 * Tests
 * Provide a way to work on multiple datasources
 * Provide more liquibase configuration hooks (changeset parameters, contexts, default tablespace, etc)
-* Support changeset files inclusion (it seems that groovy-liquibase cannot load them from classpath)
 
 
 [1]: http://liquibase.org/
 [2]: https://github.com/tlberglund/groovy-liquibase
+[3]: http://www.liquibase.org/manual/home
 '''
 }

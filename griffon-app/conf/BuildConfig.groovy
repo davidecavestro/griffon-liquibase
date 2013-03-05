@@ -28,12 +28,12 @@ griffon.project.dependency.resolution = {
         // pluginDirPath is only available when installed
         // String basePath = pluginDirPath? "${pluginDirPath}/" : ''
         // flatDir name: "${pluginName}LibDir", dirs: ["${basePath}lib"]
+        flatDir name: "tmpLocalLib", dirs: ["lib"]
     }
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime' or 'test' scopes eg.
 
-        // runtime 'mysql:mysql-connector-java:5.1.5'
-        compile 'com.augusttechgroup:groovy-liquibase-dsl:0.7.3'
+        compile 'com.augusttechgroup:groovy-liquibase-dsl:0.7.6'
     }
 }
 

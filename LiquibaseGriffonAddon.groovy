@@ -119,9 +119,9 @@ class LiquibaseGriffonAddon {
 
         @Override
         Enumeration<URL> getResources(String locationPattern) throws IOException {
-            pathResolver.getResources(locationPattern).collect {Resource resource->
+            Collections.enumeration (pathResolver.getResources(locationPattern).collect {Resource resource->
                 resource.URL
-            }
+            })
         }
 
         @Override
